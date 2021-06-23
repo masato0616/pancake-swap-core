@@ -1,0 +1,18 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/VueDockerfile
+    working_dir: /var/app
+    environment:
+      APP_HOST: 192.168.1.100:3000
+      TZ: Asia/Tokyo
+    command: /bin/sh -c 'yarn install&& yarn run start'
+    volumes:
+      - .:/var/app
+    ports:
+      - 3000:3000
+
+volumes:
+  bundle:

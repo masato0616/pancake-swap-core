@@ -1,0 +1,19 @@
+FROM node:14-slim
+
+ENV APP_HOME /var/app
+WORKDIR $APP_HOME
+
+RUN apt-get update
+RUN apt-get install apt-transport-https -y
+RUN apt-get install -my wget gnupg
+RUN apt-get install curl -y
+RUN apt-get install git -y
+RUN apt-get install python3 -y
+RUN apt-get install make g++ -y
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -a \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt update \
+    && apt install yarn -y
+
+RUN yarn install -y

@@ -5,7 +5,7 @@
   "homepage": "https://pancakeswap.finance",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pancakeswap/pancake-swap-core.git"
+    "url": "https://github.com/masato0616/pancakeswap-sdk.git"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
